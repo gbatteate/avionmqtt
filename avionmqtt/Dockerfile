@@ -1,5 +1,5 @@
-#ARG BUILD_FROM
-ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
+ARG BUILD_FROM
+#ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
 FROM $BUILD_FROM
 
 RUN apk add --no-cache python3 py3-pip bluez
@@ -11,7 +11,7 @@ RUN python3 -m venv /opt/venv \
 
 COPY run.sh /run.sh
 RUN chmod +x /run.sh && sed -i 's/\r$//' /run.sh
-RUN chmod +x /run.sh
+#RUN chmod +x /run.sh
 
 CMD ["/run.sh"]
 

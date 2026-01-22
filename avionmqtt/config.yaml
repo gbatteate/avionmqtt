@@ -6,7 +6,7 @@ version: "0.1.0"
 startup: services
 boot: auto
 init: false
-#host_dbus: true
+host_dbus: true
 #privileged: true
 
 arch:

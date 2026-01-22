@@ -7,7 +7,17 @@ startup: services
 boot: auto
 init: false
 host_dbus: true
-privileged: true
+#privileged: true
+
+# Give access to Bluetooth adapter device nodes
+devices:
+  - /dev/bus/usb
+  - /dev/hci0
+
+# Minimum capabilities that commonly matter for BLE
+capabilities:
+  - NET_ADMIN
+  - NET_RAW
 
 arch:
   - amd64

@@ -5,7 +5,7 @@ version: "0.1.0"
 
 startup: services
 boot: auto
-init: false
+#init: false
 
 arch:
   - amd64
@@ -20,8 +20,8 @@ map:
     path: /config
     read_only: false
 
-options:
-  log_level: INFO
+#options:
+#  log_level: INFO
 
-schema:
-  log_level: list(DEBUG|INFO|WARNING|ERROR)
+#schema:
+#  log_level: list(DEBUG|INFO|WARNING|ERROR)

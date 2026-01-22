@@ -14,7 +14,7 @@ host_network: true
 
 map:
   - type: homeassistant_config
-    path: /config
+    path: /avionmqtt/config
     read_only: false
 
 #options:

@@ -1,5 +1,5 @@
 build_from:
   #amd64: ghcr.io/hassio-addons/base:latest
-  amd64: ghcr.io/home-assistant/amd64-base:latest
-  #amd64: ghcr.io/home-assistant/amd64-addon-base:latest
+  #amd64: ghcr.io/home-assistant/amd64-base:latest
+  amd64: ghcr.io/home-assistant/amd64-addon-base:latest
 

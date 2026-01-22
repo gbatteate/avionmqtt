@@ -7,8 +7,8 @@ RUN apk add --no-cache \
 
 RUN python3 -m venv /opt/venv \
   && /opt/venv/bin/pip install --no-cache-dir --upgrade pip \
-  && /opt/venv/bin/pip install --no-cache-dir avionmqtt
-
+  && /opt/venv/bin/pip install --no-cache-dir avionmqtt pyyaml
+  
 COPY run.sh /run.sh
 RUN chmod +x /run.sh && sed -i 's/\r$//' /run.sh
 

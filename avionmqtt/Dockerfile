@@ -10,6 +10,7 @@ RUN python3 -m venv /opt/venv \
   && /opt/venv/bin/pip install --no-cache-dir avionmqtt
 
 COPY run.sh /run.sh
+RUN chmod +x /run.sh && sed -i 's/\r$//' /run.sh
 RUN chmod +x /run.sh
 
 CMD ["/run.sh"]

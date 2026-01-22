@@ -5,7 +5,7 @@ version: "0.1.0"
 
 startup: services
 boot: auto
-init: false
+#init: false
 
 arch:
   - amd64

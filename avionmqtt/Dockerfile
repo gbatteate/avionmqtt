@@ -2,10 +2,14 @@ ARG BUILD_FROM
 #ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
 FROM $BUILD_FROM
 
-RUN apk add --no-cache python3 py3-pip bluez
+#RUN apk add --no-cache python3 py3-pip bluez
+
+# Bluetooth + useful CA certs
+RUN apk add --no-cache bluez dbus tzdata ca-certificates
 
 # Create a virtualenv and install avionmqtt inside it (PEP 668-safe)
-RUN python3 -m venv /opt/venv \
+#RUN python3 -m venv /opt/venv \
+RUN python -m venv /opt/venv \
   && /opt/venv/bin/pip install --no-cache-dir --upgrade pip \
   && /opt/venv/bin/pip install --no-cache-dir avionmqtt
 

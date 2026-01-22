@@ -1,0 +1,12 @@
+name: "avionmqtt"
+slug: "avionmqtt"
+description: "Avi-on / Halo Home BLE → MQTT bridge"
+version: "0.1.0"
+startup: services
+boot: auto
+
+arch:
+  - amd64
+  - aarch64
+  - armv7
+  - armhf

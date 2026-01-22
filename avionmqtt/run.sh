@@ -1,13 +1,15 @@
 #!/bin/sh
 set -e
 
-LOG_LEVEL=$(bashio::config 'log_level')
+# Optional: allow override via env var; default to INFO
+LOG_LEVEL="${LOG_LEVEL:-INFO}"
 
-if [ ! -f /config/avionmqtt/settings.yaml ]; then
-  echo "ERROR: Missing /config/avionmqtt/settings.yaml"
+SETTINGS="/config/avionmqtt/settings.yaml"
+
+if [ ! -f "$SETTINGS" ]; then
+  echo "ERROR: Missing $SETTINGS"
   exit 1
 fi
 
-echo "Starting avionmqtt (log=${LOG_LEVEL})"
-exec /opt/venv/bin/avionmqtt -s /config/avionmqtt/settings.yaml --log=${LOG_LEVEL}
-
+echo "Starting avionmqtt (log=${LOG_LEVEL}) using ${SETTINGS}"
+exec /opt/venv/bin/avionmqtt -s "$SETTINGS" --log="${LOG_LEVEL}"

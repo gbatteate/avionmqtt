@@ -3,7 +3,8 @@ slug: "avionmqtt"
 description: "Avi-on / Halo Home BLE → MQTT bridge"
 version: "0.1.0"
 
-startup: services
+#startup: services  changed to application
+startup: application
 boot: auto
 init: false
 host_dbus: true
